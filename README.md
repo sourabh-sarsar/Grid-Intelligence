@@ -5,6 +5,8 @@ A modern dashboard web app scaffold built using React + Vite + Tailwind + MUI, m
 
 Original design source: https://www.figma.com/design/Zw6Q67oyLudqmdKn8EJlNa/Grid-Intelligence
 
+Hosted site: https://grid-intelligence-gamma.vercel.app/
+
 ## Key Features
 
 - React 18.3 (peer dependency)
