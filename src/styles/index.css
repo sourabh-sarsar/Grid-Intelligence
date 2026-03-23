@@ -1,0 +1,77 @@
+@import './fonts.css';
+@import './tailwind.css';
+@import './theme.css';
+
+/* ── Global typography driven by ThemeContext CSS variables ─────────────── */
+body {
+  line-height: var(--md-line-spacing, 1.5);
+  font-family: var(--md-font-family, 'Roboto', sans-serif);
+}
+
+/* ── Motion: None — kill every CSS transition/animation ────────────────── */
+html[data-motion="none"] *,
+html[data-motion="none"] *::before,
+html[data-motion="none"] *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  transition-delay: 0ms !important;
+}
+
+/* ── Motion: Reduced — cap durations at 150 ms ──────────────────────────── */
+html[data-motion="reduced"] *,
+html[data-motion="reduced"] *::before,
+html[data-motion="reduced"] *::after {
+  animation-duration: 150ms !important;
+  transition-duration: 150ms !important;
+}
+
+/* ── Density: apply --md-density-pad to card surfaces ──────────────────── */
+html[data-density] .md-card-surface {
+  padding: var(--md-density-pad, 16px);
+}
+
+/* Scrollbar styling for dark mode */
+html.dark ::-webkit-scrollbar { width: 6px; height: 6px; }
+html.dark ::-webkit-scrollbar-track { background: transparent; }
+html.dark ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 3px; }
+html.dark ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.22); }
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.14); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(0,0,0,0.24); }
+
+/* ── Leaflet zoom control — fully rounded buttons ───────────────────────── */
+.leaflet-bar {
+  border-radius: 9999px !important;
+  overflow: hidden !important;
+  border: none !important;
+  box-shadow: none !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+.leaflet-bar a,
+.leaflet-bar a:first-child,
+.leaflet-bar a:last-child {
+  border-radius: 9999px !important;
+  border: none !important;
+  width: 32px !important;
+  height: 32px !important;
+  line-height: 32px !important;
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.18) !important;
+  transition: background 0.15s, box-shadow 0.15s, transform 0.12s !important;
+}
+
+.leaflet-bar a:hover {
+  transform: scale(1.1) !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.24) !important;
+}
